@@ -4,6 +4,7 @@
   "description": "A syntax highlighter for the L3 language",
   "publisher": "SidonieBouthors",
   "repository": "https://github.com/SidonieBouthors/l3-syntax",
+  "icon": "images/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
