@@ -6,7 +6,7 @@ This is a syntax highlighting extension for the L3 language from the CS-420 (Adv
 
 Here is what the highlighting looks like on some example code:
 
-![Syntax Highlighting](images/highlight.png)
+![Syntax Highlighting](https://raw.githubusercontent.com/SidonieBouthors/l3-syntax/main/images/highlight.png)
 
 ## Release Notes
 

@@ -2,6 +2,7 @@
   "name": "l3-syntax",
   "displayName": "L3 Syntax",
   "description": "A syntax highlighter for the L3 language",
+  "repository": "https://github.com/SidonieBouthors/l3-syntax",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
