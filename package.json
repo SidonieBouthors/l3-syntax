@@ -1,0 +1,25 @@
+{
+  "name": "l3-syntax",
+  "displayName": "L3 Syntax",
+  "description": "A syntax highlighter for the L3 language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "l3",
+      "aliases": ["L3", "l3"],
+      "extensions": [".l3"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "l3",
+      "scopeName": "source.l3",
+      "path": "./syntaxes/l3.tmLanguage.json"
+    }]
+  }
+}
