@@ -10,16 +10,25 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "l3",
-      "aliases": ["L3", "l3"],
-      "extensions": [".l3"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "l3",
-      "scopeName": "source.l3",
-      "path": "./syntaxes/l3.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "l3",
+        "aliases": [
+          "L3",
+          "l3"
+        ],
+        "extensions": [
+          ".l3"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "l3",
+        "scopeName": "source.l3",
+        "path": "./syntaxes/l3.tmLanguage.json"
+      }
+    ]
   }
 }
