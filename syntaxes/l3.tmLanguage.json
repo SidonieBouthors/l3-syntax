@@ -1,32 +1,168 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "L3",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.l3",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.l3",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.l3",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.l3"
+  "scopeName": "source.l3",
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "L3",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#constants-lang"
+    },
+    {
+      "include": "#constants-num"
+    },
+    {
+      "include": "#constants-char"
+    },
+    {
+      "include": "#operator"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#function-names"
+    },
+    {
+      "include": "#parentheses"
+    },
+    {
+      "include": "#top-level-definitions"
+    },
+    {
+      "include": "#local-definitions"
+    },
+    {
+      "include": "#functions-and-primitives"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.semicolon.l3",
+          "match": ";;.*$"
+        }
+      ]
+    },
+    "constants-lang": {
+      "pattern": [
+        {
+          "name": "constant.language.l3",
+          "match": "\\b(#t|#f|#u)\\b"
+        }
+      ]
+    },
+    "constants-num": {
+      "pattern": [
+        {
+          "name": "constant.numeric.l3",
+          "match": "\\b-?(0|[1-9][0-9]*)(#[xX][0-9a-fA-F]+)?\\b"
+        }
+      ]
+    },
+    "constants-char": {
+      "patterns": [
+        {
+          "name": "constant.character.l3",
+          "match": "'([^'\\\\]|\\\\.)'"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.l3",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.l3",
+          "match": "\\\\(?:[\"'\\\\nrt]|x[0-9a-fA-F]{2})"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.l3",
+          "match": "\\b(rec|begin|if|cond|@)\\b"
+        }
+      ]
+    },
+    "operator": {
+      "patterns": [
+        {
+          "name": "keyword.control.l3",
+          "match": "\\b(and|or|not)\\b"
+        }
+      ]
+    },
+    "parentheses": {
+      "patterns": [
+        {
+          "name": "punctuation.section.parens.begin.l3",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.section.parens.end.l3",
+          "match": "\\)"
+        }
+      ]
+    },
+    "top-level-definitions": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.l3",
+          "match": "\\b(def|defrec)\\b"
+        },
+        {
+          "name": "entity.name.function.l3",
+          "match": "(?<=\\(def\\s+)[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        },
+        {
+          "name": "entity.name.function.l3",
+          "match": "(?<=\\(defrec\\s+)[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        }
+      ]
+    },
+    "local-definitions": {
+      "patterns": [
+        {
+          "name": "keyword.control.l3",
+          "match": "\\b(let|let\\*|letrec)\\b"
+        },
+        {
+          "name": "variable.assignment.l3",
+          "match": "(?<=\\(let(?:\\*?)\\s*\\(\\()\\s*[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        },
+        {
+          "name": "entity.name.function.l3",
+          "match": "(?<=\\(letrec\\s*\\(\\()\\s*[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        }
+      ]
+    },
+    "functions-and-primitives": {
+      "patterns": [
+        {
+          "name": "keyword.control.l3",
+          "match": "\\bfun\\b"
+        },
+        {
+          "name": "variable.parameter.l3",
+          "match": "(?<=\\(fun\\s*\\(\\s*)[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        },
+        {
+          "name": "entity.name.function.l3",
+          "match": "(?<=\\()[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+(?=\\s)"
+        },
+        {
+          "name": "support.function.primitive.l3",
+          "match": "(?<=\\(@\\s*)[a-zA-Z0-9!$%&*+./:<=>?@^_~-]+"
+        }
+      ]
+    }
+  }
 }
